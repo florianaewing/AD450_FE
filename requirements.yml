@@ -1,0 +1,13 @@
+name: AD_450_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - flake8
+  - jupyter
+  - jupyterlab
+  - ipython
+  - pip
+  - pip:
+      - black
+      - nbqa
