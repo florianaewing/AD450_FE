@@ -1,1 +1,1 @@
-This is the report for week 6: eda_matrix
+This is the report for week 7: Data Cleaning & Matrices
