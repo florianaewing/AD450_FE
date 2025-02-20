@@ -23,15 +23,14 @@ def rename_columns(df):
 
 def clean_and_fill_content_rating(df):
     df = df.copy()
-    df["content_rating"] = df["content_rating"].fillna("Unrated")  # Fill NaN with "Unrated"
-    df["content_rating"] = df["content_rating"].replace("Not Rated", "Unrated")  # Replace "Not Rated" with "Unrated"
+    df["content_rating"] = df["content_rating"].fillna("Unrated") 
+    df["content_rating"] = df["content_rating"].replace("Not Rated", "Unrated") 
     return df
 
 def remove_fully_null_columns_rows(df):
     df = df.dropna(axis=0, how='all')  # Remove fully null rows
     df = df.dropna(axis=1, how='all')  # Remove fully null columns
     return df
-
 
 def clean_release_year(df):
     df = df.copy()
