@@ -1,7 +1,6 @@
 import re
 import pandas as pd
 
-
 def rename_columns(df):
     df = df.copy()
     df.columns = (
@@ -28,13 +27,14 @@ def clean_and_fill_content_rating(df):
     return df
 
 def remove_fully_null_columns_rows(df):
-    df = df.dropna(axis=0, how='all')  # Remove fully null rows
-    df = df.dropna(axis=1, how='all')  # Remove fully null columns
+    df = df.dropna(axis=0, how='all') 
+    df = df.dropna(axis=1, how='all')  
     return df
 
 def clean_release_year(df):
     df = df.copy()
     df["release_year_coerce"] = pd.to_datetime(df["release_year"], errors="coerce")
+    df["release_year_mixed"] = pd.to_datetime(df["release_year"], errors="coerce", format="mixed")
     return df
 
 def clean_income(df):
